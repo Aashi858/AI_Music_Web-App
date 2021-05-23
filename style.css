@@ -1,0 +1,47 @@
+.heading{
+    width: 100%;
+    margin-top: 0%;
+    font-family: 'Dancing Script', cursive;
+    font-size: 35px;
+}
+.note{
+    font-size: 20px;
+    font-family: 'Stint Ultra Condensed', cursive;
+}
+.glow {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    animation: glow 3s ease-in-out infinite alternate;
+    font-family:'Times New Roman';
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    
+    to {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px cyan, 0 0 40px cyan, 0 0 50px cyan, 0 0 60px cyan, 0 0 70px cyan;
+    }
+  }
+  #footer{
+      width: 100%;
+      bottom: 0;
+      text-align: center;
+      background-color: rgb(106, 233, 233);
+      color:#fff;
+      position: fixed;
+  }
+  canvas{
+    background-color: aliceblue;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count:infinite;
+    border-style: groove;
+    border-width: 8px;
+  }
+  @keyframes example {
+    from {border-color:violet}
+    to {border-color:skyblue};
+  }
