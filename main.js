@@ -6,7 +6,7 @@ rightWristY = "";
 leftWristX = "";
 leftWristY = "";
 score_left_wrist = "";
-song = 0;
+song = "";
 
 function preload(){
     let_it_go = loadSound("let it go.mp3");
@@ -29,13 +29,10 @@ function draw(){
         circle(leftWristX,leftWristY,30);
         fill("#7a8cf0");
         stroke("#7a8cf0");
-        song = song + 1;
-        play();
-    if(song == 3){
-       song = 0;
-        play();
-    }
-    }
+    if(song == "left"){
+      play();
+    }    
+  }
 }
 function model_loaded(){
     console.log("Model is loaded");
@@ -57,28 +54,16 @@ function got_results(results){
     }
 }
 function play(){
-    if(song == 0){
+    if(song == "right"){
         show_yourself.stop();
         touch_the_sky.stop();
         let_it_go.play();
-        let_it_go.setVolume(1);
-        let_it_go.rate(1);
         document.getElementById("song_name").innerHTML = "Let It Go";
     }
-    if(song == 1){
+    if(song == "left"){
         touch_the_sky.stop();
         let_it_go.stop();
         show_yourself.play();
-        show_yourself.setVolume(1);
-        show_yourself.rate(1);
         document.getElementById("song_name").innerHTML = "Show Yourself";
-    }
-    if(song == 2){
-        show_yourself.stop();
-        let_it_go.stop();
-        touch_the_sky.play();
-        touch_the_sky.setVolume(1);
-        touch_the_sky.rate(1);
-        document.getElementById("song_name").innerHTML = "Touch The Sky";
     }
 }
