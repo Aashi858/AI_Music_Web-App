@@ -36,6 +36,14 @@ function draw(){
         play();
     }
   }
+  if(score_right_wrist)
+    circle(rightWristX,rightWristY,30);
+    fill("#7a8cf0");
+    stroke("#7a8cf0");
+    if(song > 0){
+        song = song - 1;
+        play_music();
+    }
 }
 function model_loaded(){
     console.log("Model is loaded");
@@ -43,6 +51,9 @@ function model_loaded(){
 function got_results(results){
     if(results.length > 0){
         console.log(results);
+
+        score_right_wrist = results[0].pose.keypoints[10].score;
+        console.log("scoreRightwrist :" + score_right_wrist);
 
         score_left_wrist = results[0].pose.keypoints[9].score;
         console.log("Score Left Wrist:" + score_left_wrist);
