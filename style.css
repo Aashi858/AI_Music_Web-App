@@ -15,6 +15,9 @@
     animation: glow 3s ease-in-out infinite alternate;
     font-family:'Times New Roman';
   }
+  .glow,:hover{
+    cursor: pointer;
+  }
   
   @keyframes glow {
     from {
